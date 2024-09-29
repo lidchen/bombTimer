@@ -1,0 +1,68 @@
+
+@font-face {
+    font-family: Digital7;
+    src: url(/digital-7/digital-7.ttf);
+}
+
+@font-face {
+    font-family: Alkhemikal;
+    src: url(/Alkhemikal.ttf);
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    max-width: 1000px; /* Maximum width of the container */
+    margin: 0 auto; /* Center the container */
+}
+
+.picture {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+#timer-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 21%; /* Adjust this value to position the timer vertically */
+    padding-left: 13%;
+}
+
+#timer {
+    font-family: Digital7;
+    font-size: 10vw; /* Responsive font size */
+    color: rgb(133, 21, 10);
+    line-height: 1;
+}
+
+.taskElement, input.taskElement, label.taskElement {
+    font-family: Alkhemikal;
+    font-size: 70px;
+    height: 60px;
+    border: none;
+    background-color: rgb(108, 94, 94);
+    color: rgb(99, 0, 0);
+}
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+}
+
+input[type="number"] {
+    width: 60px;
+    font-size: 16px;
+}
+
+button {
+    font-size: 16px;
+    padding: 10px 20px;
+}
