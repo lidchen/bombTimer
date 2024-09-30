@@ -4,18 +4,28 @@
         <title>Countdown Timer</title>
     </head>
 
-    <body style = 'background-color: rgb(108, 94, 94);'>
-        <label for = "task" class = "taskElement">Current Task:</label>
-        <input type = "text" id = "task" class = "taskElement">
+    <body style = 'background-color: none;'>
+        <!-- <label for = "task" class = "taskElement">Current Task:</label>
+        <input type = "text" id = "task" class = "taskElement"> -->
         <div class="container">
-            <img class="picture" src="/boom.png" alt="boom">
+            <img class="picture" src="boom.png" alt="boom">
             <div id="timer-wrapper">
                 <div id="timer">00:00</div>
             </div>
         </div>
-        <button id="startButton"> Start </button>
-        <label for="minutes">Set Minutes:</label>
+
+        <div id = "controlContainer">
+        <button id="startButton"> 
+          Start 
+        </button>
+        <label for="minutes" class = "setMinText">
+          Set Minutes:
+        </label>
         <input type="number" id="minutes" min="1" value="2">
+        </div>
+
         <script src="countdownTimer.js"> </script>
+        <audio id = "c4Plant" src = "C4_Planted.m4a"></audio>
+        <audio id = "c4Explode" src = "C4_Explode.m4a"></audio>
     </body>
 </html>
