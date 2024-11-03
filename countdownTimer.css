@@ -31,14 +31,14 @@
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    padding-bottom: 21%; /* Adjust this value to position the timer vertically */
+    padding-bottom: 23%; /* Adjust this value to position the timer vertically */
     padding-left: 12%;
 }
 
 #timer {
     font-family: Digital7;
     font-size: 10vw; /* Responsive font size */
-    color: rgb(133, 21, 10);
+    color: rgb(191, 34, 20);
     line-height: 1;
 }
 
@@ -82,4 +82,13 @@ button {
     background-color: rgb(130, 43, 36);
     color:black;
     padding: 10px 20px;
+}
+
+#defuseButton
+{
+    display: none;
+    position: relative;
+    width: 100%;
+    max-width: 100px; /* Maximum width of the container */
+    margin: 0 auto; /* Center the container */
 }

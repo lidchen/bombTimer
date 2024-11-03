@@ -1,10 +1,10 @@
 <html>
     <head>
         <link rel = "stylesheet" href = "countdownTimer.css">
-        <title>Countdown Timer</title>
+        <title>&#128163 bombTimer &#128163</title>
     </head>
 
-    <body style = 'background-color: none;'>
+    <body style = 'background-color: rgb(108, 94, 94);'>
         <!-- <label for = "task" class = "taskElement">Current Task:</label>
         <input type = "text" id = "task" class = "taskElement"> -->
         <div class="container">
@@ -24,8 +24,13 @@
         <input type="number" id="minutes" min="1" value="2">
         </div>
 
+        <button id="defuseButton">
+            Defuse
+        </button>
+
         <script src="countdownTimer.js"> </script>
         <audio id = "c4Plant" src = "C4_Planted.m4a"></audio>
         <audio id = "c4Explode" src = "C4_Explode.m4a"></audio>
+        <audio id = "c4Defuse" src = "C4_Defuse.mp3"></audio>
     </body>
 </html>

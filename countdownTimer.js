@@ -1,13 +1,14 @@
 let countdown; //countdown as a global variable
 const displayElement = document.querySelector('#timer');
 const startButton = document.querySelector('#startButton');
+const defuseButton = document.querySelector('#defuseButton');
 const input = document.querySelector('#minutes')
 const controlContainer = document.querySelector('#controlContainer');
 
 
 function soundPlant() {
     var sound = document.getElementById("c4Plant");
-    sound.play().catch(e => console.log("Error playing sound:", e));
+    sound.play();
 }
 
 function soundExplode() {
@@ -15,11 +16,24 @@ function soundExplode() {
     sound.play();
 }
 
+function soundDefuse() {
+    var sound = document.getElementById("c4Defuse");
+    sound.play();
+}
+
+function resetTimer() {
+    clearInterval(countdown);
+    displayElement.textContent = "EEEE";
+    controlContainer.style.display = 'block';
+    defuseButton.style.display = 'none';
+}
+
 function countdownTimer (duration,displayElement) {
     if (countdown) {
         clearInterval(countdown);
     }
     controlContainer.style.display = 'none';
+    defuseButton.style.display = 'block';
     let timeremain = duration, minutes, seconds;
     countdown = setInterval(
     function(){
@@ -36,9 +50,7 @@ function countdownTimer (duration,displayElement) {
         }
 
         if (--timeremain < 0){
-            clearInterval(countdown);
-            displayElement.textContent = "EEEE";
-            controlContainer.style.display = 'block';
+            resetTimer();
         }
     }, 1000);
 }
@@ -53,4 +65,7 @@ startButton.addEventListener('click', function() {
     countdownTimer(seconds, displayElement)
 });
 
-controlContainer.style.display = 'block';
+defuseButton.addEventListener('click', function() {
+    soundDefuse();
+    resetTimer();
+});
