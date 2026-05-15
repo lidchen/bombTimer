@@ -22,6 +22,26 @@ function soundDefuse() {
     sound.play();
 }
 
+function stopPlant() {
+    var sound = document.getElementById("c4Plant");
+    sound.pause();
+    sound.currentTime = 0;
+}
+
+function stopExplode() {
+    var sound = document.getElementById("c4Explode");
+    sound.pause();
+    sound.currentTime = 0;
+}
+
+function stopDefuse() {
+    var sound = document.getElementById("c4Defuse");
+    sound.pause();
+    sound.currentTime = 0;
+}
+
+
+
 function resetTimer() {
     clearInterval(countdown);
     displayElement.textContent = "EEEE";
@@ -72,8 +92,6 @@ function countdownTimer (duration,displayElement) {
     }, 1000);
 }
 
-
-
 startButton.addEventListener('click', function() {
     soundPlant();
     let minutes = parseInt(input.value, 10);
@@ -83,6 +101,8 @@ startButton.addEventListener('click', function() {
 });
 
 defuseButton.addEventListener('click', function() {
+    stopPlant();
+    stopExplode();
     soundDefuse();
     resetTimer();
 });
