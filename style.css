@@ -37,7 +37,7 @@
 
 #timer {
     font-family: Digital7;
-    font-size: 10vw; /* Responsive font size */
+    font-size: var(--timer-font-size, 10vw);
     color: rgb(191, 34, 20);
     line-height: 1;
 }

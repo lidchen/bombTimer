@@ -4,6 +4,7 @@ const startButton = document.querySelector('#startButton');
 const defuseButton = document.querySelector('#defuseButton');
 const input = document.querySelector('#minutes')
 const controlContainer = document.querySelector('#controlContainer');
+const timerContainer = document.querySelector('.container');
 
 
 function soundPlant() {
@@ -26,6 +27,22 @@ function resetTimer() {
     displayElement.textContent = "EEEE";
     controlContainer.style.display = 'block';
     defuseButton.style.display = 'none';
+}
+
+function updateTimerFontSize() {
+    const containerWidth = timerContainer.getBoundingClientRect().width;
+    const maxFontSize = 100;
+    const scaledFontSize = Math.min(containerWidth * 0.1, maxFontSize);
+    displayElement.style.setProperty('--timer-font-size', `${scaledFontSize}px`);
+}
+
+updateTimerFontSize();
+
+if (window.ResizeObserver) {
+    const timerResizeObserver = new ResizeObserver(updateTimerFontSize);
+    timerResizeObserver.observe(timerContainer);
+} else {
+    window.addEventListener('resize', updateTimerFontSize);
 }
 
 function countdownTimer (duration,displayElement) {
